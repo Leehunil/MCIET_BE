@@ -25,10 +25,14 @@ public class Items {
     private String name;
     private LocalDate expirationDate;
 
+    @Enumerated(EnumType.STRING)
+    private ItemCategory itemCategory;
+
     @Builder
-    public Items(User user, String name, LocalDate expirationDate){
+    public Items(User user, String name, LocalDate expirationDate, ItemCategory itemCategory){
         this.user = user;
         this.name = name;
         this.expirationDate = expirationDate;
+        this.itemCategory = itemCategory;
     }
 }
