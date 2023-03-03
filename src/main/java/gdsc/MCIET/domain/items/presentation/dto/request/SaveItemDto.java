@@ -2,10 +2,12 @@ package gdsc.MCIET.domain.items.presentation.dto.request;
 
 import gdsc.MCIET.domain.items.domain.ItemCategory;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDate;
 
 @Getter
+@RequiredArgsConstructor
 public class SaveItemDto {
 
     private String email;
