@@ -2,6 +2,7 @@ package gdsc.MCIET.domain.recipe.domain;
 
 import gdsc.MCIET.domain.cuisine.domain.Cuisine;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -22,6 +23,7 @@ public class Recipe {
 
     private String exposition;
 
+    @Builder
     public Recipe(Cuisine cuisine, String exposition){
         this.cuisine = cuisine;
         this.exposition = exposition;

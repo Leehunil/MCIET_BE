@@ -17,15 +17,12 @@ public class Cuisine {
     @Column(name = "cuisine_id")
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
-
     private String title;
+    private String ingredients;
 
     @Builder
-    public Cuisine(User user, String title){
-        this.user = user;
+    public Cuisine(String title, String ingredients){
         this.title = title;
+        this.ingredients = ingredients;
     }
 }
