@@ -10,7 +10,8 @@ public enum ErrorCode {
 
     //Not_Found
     USER_NOT_FOUND(HttpStatus.NOT_FOUND.value(), "GLOBAL-404-1", "User Not Found."),
-    CUISINE_NOT_FOUND(HttpStatus.NOT_FOUND.value(),"GLOBAL-404-1", "Cuisine Not Found.");
+    CUISINE_NOT_FOUND(HttpStatus.NOT_FOUND.value(),"GLOBAL-404-1", "Cuisine Not Found."),
+    MEMO_NOT_FOUND(HttpStatus.NOT_FOUND.value(),"GLOBAL-404-1", "Memo Not Found.");
 
     private int status;
     private String code;

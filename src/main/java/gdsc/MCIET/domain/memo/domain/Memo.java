@@ -22,10 +22,16 @@ public class Memo {
     private User user;
 
     private String contents;
+    private Boolean checkBox;
 
     @Builder
-    public Memo(User user, String contents){
+    public Memo(User user, String contents, Boolean checkBox){
         this.user = user;
         this.contents = contents;
+        this.checkBox = checkBox;
+    }
+
+    public void updateCheck(Boolean checkBox){
+        this.checkBox = checkBox;
     }
 }

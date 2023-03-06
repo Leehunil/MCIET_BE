@@ -21,6 +21,7 @@ public class RecipeService {
         return recipeRepository.save(Recipe.builder()
                 .cuisine(cuisine)
                 .exposition(saveRecipeDto.getExposition())
+                .pictureUrl(saveRecipeDto.getPictureUrl())
                 .build()).getId();
     }
 }

@@ -8,4 +8,5 @@ import java.util.Optional;
 public interface CuisineRepository extends JpaRepository<Cuisine, Long> {
     Cuisine save(Cuisine cuisine);
     Optional<Cuisine> findById(Long id);
+    Optional<Cuisine> findByTitle(String title);
 }

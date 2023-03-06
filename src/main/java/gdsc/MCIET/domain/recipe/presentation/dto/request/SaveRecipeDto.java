@@ -10,9 +10,11 @@ public class SaveRecipeDto {
 
     private Long cuisineId;
     private String exposition;
+    private String pictureUrl;
 
-    public SaveRecipeDto(Long cuisineId, String exposition){
+    public SaveRecipeDto(Long cuisineId, String exposition, String pictureUrl){
         this.cuisineId =cuisineId;
         this.exposition = exposition;
+        this.pictureUrl = pictureUrl;
     }
 }

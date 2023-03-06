@@ -2,6 +2,7 @@ package gdsc.MCIET.global.init;
 
 import gdsc.MCIET.domain.items.domain.ItemCategory;
 import gdsc.MCIET.domain.items.domain.Items;
+import gdsc.MCIET.domain.memo.domain.Memo;
 import gdsc.MCIET.domain.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -45,6 +46,13 @@ public class InitDb {
             em.persist(item1);
             em.persist(item2);
             em.persist(item3);
+
+            Memo memo1 = new Memo(user1, "양파1",false);
+            Memo memo2 = new Memo(user1, "양파2", false);
+            Memo memo3 = new Memo(user1, "양파3", false);
+            em.persist(memo1);
+            em.persist(memo2);
+            em.persist(memo3);
 
             em.flush();
 

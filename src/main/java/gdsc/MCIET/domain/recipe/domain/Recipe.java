@@ -22,10 +22,12 @@ public class Recipe {
     private Cuisine cuisine;
 
     private String exposition;
+    private String pictureUrl;
 
     @Builder
-    public Recipe(Cuisine cuisine, String exposition){
+    public Recipe(Cuisine cuisine, String exposition, String pictureUrl){
         this.cuisine = cuisine;
         this.exposition = exposition;
+        this.pictureUrl = pictureUrl;
     }
 }
