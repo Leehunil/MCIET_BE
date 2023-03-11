@@ -1,3 +1,3 @@
 # MCIET_BE
 [GDSC] Solustion Challenge Project
-나의 냉장고 앱
+유통기한 관리해주는 
