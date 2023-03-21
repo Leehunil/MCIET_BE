@@ -4,7 +4,6 @@ import gdsc.MCIET.domain.memo.domain.Memo;
 import gdsc.MCIET.domain.memo.domain.repository.MemoRepository;
 import gdsc.MCIET.domain.memo.exception.MemoNotFound;
 import gdsc.MCIET.domain.memo.presentaion.dto.request.SaveMemoDto;
-import gdsc.MCIET.domain.memo.presentaion.dto.request.UpdateCheckBoxDto;
 import gdsc.MCIET.domain.memo.presentaion.dto.response.ShowMemoDto;
 import gdsc.MCIET.domain.user.domain.User;
 import gdsc.MCIET.global.utils.UserUtilsImpl;
@@ -30,7 +29,6 @@ public class MemoService implements MemoUtils{
         return memoRepository.save(Memo.builder()
                 .user(user)
                 .contents(saveMemoDto.getContents())
-                .checkBox(false)
                 .build()
         ).getId();
     }
@@ -42,13 +40,6 @@ public class MemoService implements MemoUtils{
         return memoList.stream()
                 .map(memo -> new ShowMemoDto(memo))
                 .collect(Collectors.toList());
-    }
-
-    //메모 체크박스 업데이트
-    @Transactional
-    public void updateCheckBox(UpdateCheckBoxDto updateCheckBoxDto){
-        Memo memo = findMemo(updateCheckBoxDto.getMemoId());
-        memo.updateCheck(updateCheckBoxDto.getCheckBox());
     }
 
     //메모 삭제

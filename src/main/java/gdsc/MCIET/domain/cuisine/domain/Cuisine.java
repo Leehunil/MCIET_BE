@@ -2,6 +2,7 @@ package gdsc.MCIET.domain.cuisine.domain;
 
 import gdsc.MCIET.domain.recipe.domain.Recipe;
 import gdsc.MCIET.domain.user.domain.User;
+import gdsc.MCIET.global.database.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;

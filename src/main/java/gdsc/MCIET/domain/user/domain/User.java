@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,9 +21,13 @@ public class User {
     private String email;
     private String name;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles = new ArrayList<>();
+
     @Builder
-    public User(String email, String name){
-        this.email = email;
+    public User(String name, String email, List<String> roles) {
         this.name = name;
+        this.email = email;
+        this.roles = roles;
     }
 }

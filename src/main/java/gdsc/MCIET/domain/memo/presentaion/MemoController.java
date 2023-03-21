@@ -1,7 +1,6 @@
 package gdsc.MCIET.domain.memo.presentaion;
 
 import gdsc.MCIET.domain.memo.presentaion.dto.request.SaveMemoDto;
-import gdsc.MCIET.domain.memo.presentaion.dto.request.UpdateCheckBoxDto;
 import gdsc.MCIET.domain.memo.presentaion.dto.response.ShowMemoDto;
 import gdsc.MCIET.domain.memo.service.MemoService;
 import gdsc.MCIET.global.successResponse.ResponseMessage;
@@ -30,12 +29,6 @@ public class MemoController {
     public ResponseEntity showAllMemo(@PathVariable String email){
         List<ShowMemoDto> result = memoService.showAllMemo(email);
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SHOW_MEMO_LIST);
-    }
-
-    @PostMapping("/update/checkbox")
-    public ResponseEntity updateCheckBox(@RequestBody UpdateCheckBoxDto updateCheckBoxDto){
-        memoService.updateCheckBox(updateCheckBoxDto);
-        return SuccessResponse.successtoResponseEntity(StatusCode.OK, null, ResponseMessage.UPDATE_MEMO_CHECKBOX);
     }
 
     @DeleteMapping ("/delete/{memoId}")

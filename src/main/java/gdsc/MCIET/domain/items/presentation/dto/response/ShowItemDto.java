@@ -1,7 +1,7 @@
 package gdsc.MCIET.domain.items.presentation.dto.response;
 
 import gdsc.MCIET.domain.items.domain.ItemCategory;
-import gdsc.MCIET.domain.items.domain.Items;
+import gdsc.MCIET.domain.items.domain.Item;
 import lombok.Getter;
 
 import java.time.LocalDate;
@@ -11,11 +11,13 @@ public class ShowItemDto {
 
     private String name;
     private LocalDate expirationDate;
+    private int remainExpirationDate;
     private ItemCategory itemCategory;
 
-    public ShowItemDto(Items items){
-        this.name = items.getName();
-        this.expirationDate = items.getExpirationDate();
-        this.itemCategory = items.getItemCategory();
+    public ShowItemDto(Item item){
+        this.name = item.getName();
+        this.expirationDate = item.getExpirationDate();
+        this.remainExpirationDate = item.getRemainExpirationDate();
+        this.itemCategory = item.getItemCategory();
     }
 }

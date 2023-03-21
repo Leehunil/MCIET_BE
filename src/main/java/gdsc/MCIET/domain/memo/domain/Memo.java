@@ -1,6 +1,7 @@
 package gdsc.MCIET.domain.memo.domain;
 
 import gdsc.MCIET.domain.user.domain.User;
+import gdsc.MCIET.global.database.BaseTimeEntity;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Memo {
+public class Memo extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "memo_id")
@@ -22,16 +23,10 @@ public class Memo {
     private User user;
 
     private String contents;
-    private Boolean checkBox;
 
     @Builder
-    public Memo(User user, String contents, Boolean checkBox){
+    public Memo(User user, String contents){
         this.user = user;
         this.contents = contents;
-        this.checkBox = checkBox;
-    }
-
-    public void updateCheck(Boolean checkBox){
-        this.checkBox = checkBox;
     }
 }

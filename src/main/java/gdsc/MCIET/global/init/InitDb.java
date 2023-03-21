@@ -1,7 +1,7 @@
 package gdsc.MCIET.global.init;
 
 import gdsc.MCIET.domain.items.domain.ItemCategory;
-import gdsc.MCIET.domain.items.domain.Items;
+import gdsc.MCIET.domain.items.domain.Item;
 import gdsc.MCIET.domain.memo.domain.Memo;
 import gdsc.MCIET.domain.user.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 @Component  // 스프링빈 등록
 @RequiredArgsConstructor
@@ -33,23 +34,23 @@ public class InitDb {
 
         public void dbInit1() {
 
-            User user1 = new User("user1@gmail.com", "user1");
-            User user2 = new User("user2@gmail.com", "user2");
-            User user3 = new User("user3@gmail.com", "user3");
+            User user1 = new User("user1", "user1@gmail.com", new ArrayList<>());
+            User user2 = new User("user2", "user2@gmail.com", new ArrayList<>());
+            User user3 = new User("user3", "user3@gmail.com", new ArrayList<>());
             em.persist(user1);
             em.persist(user2);
             em.persist(user3);
 
-            Items item1 = new Items(user1, "item1", LocalDate.now(), ItemCategory.MEAT);
-            Items item2 = new Items(user1, "item2", LocalDate.now(), ItemCategory.BEVERAGE);
-            Items item3 = new Items(user1, "item3", LocalDate.now(), ItemCategory.FROZENFOOD);
+            Item item1 = new Item(user1, "item1", LocalDate.now(), "a", 1,ItemCategory.MEAT);
+            Item item2 = new Item(user1, "item2", LocalDate.now(), "b", 1,ItemCategory.BEVERAGE);
+            Item item3 = new Item(user1, "item3", LocalDate.now(), "c", 1,ItemCategory.FROZENFOOD);
             em.persist(item1);
             em.persist(item2);
             em.persist(item3);
 
-            Memo memo1 = new Memo(user1, "양파1",false);
-            Memo memo2 = new Memo(user1, "양파2", false);
-            Memo memo3 = new Memo(user1, "양파3", false);
+            Memo memo1 = new Memo(user1, "양파1");
+            Memo memo2 = new Memo(user1, "양파2");
+            Memo memo3 = new Memo(user1, "양파3");
             em.persist(memo1);
             em.persist(memo2);
             em.persist(memo3);
