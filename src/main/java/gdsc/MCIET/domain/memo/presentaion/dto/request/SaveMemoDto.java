@@ -10,13 +10,10 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class SaveMemoDto {
 
-    private String email;
-
     @NotNull
     private String contents;
 
-    public SaveMemoDto(String email, String contents){
-        this.email = email;
+    public SaveMemoDto(String contents){
         this.contents = contents;
     }
 }

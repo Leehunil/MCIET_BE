@@ -19,20 +19,20 @@ public class UserController {
 
     private final UserService userService;
 
-    private final GoogleService googleService;
+    //private final GoogleService googleService;
+
+//    @PostMapping("/signIn")
+//    public ResponseEntity signIn(@RequestParam String idTokenString, HttpServletResponse response){
+//
+//        UserInfoDto userInfo = googleService.getUserInfo(idTokenString);
+//        String email = userService.signIn(userInfo, response);
+//
+//        return SuccessResponse.successtoResponseEntity(StatusCode.OK, email, ResponseMessage.SIGN_IN);
+//    }
 
     @PostMapping("/signIn")
-    public ResponseEntity signIn(@RequestParam String idTokenString, HttpServletResponse response){
-
-        UserInfoDto userInfo = googleService.getUserInfo(idTokenString);
-        String email = userService.signIn(userInfo, response);
-
-        return SuccessResponse.successtoResponseEntity(StatusCode.OK, email, ResponseMessage.SIGN_IN);
-    }
-
-    @PostMapping("/signIn2")
-    public ResponseEntity signIn2(@RequestParam String email, HttpServletResponse response){
-        String result = userService.signIn2(email, response);
-        return SuccessResponse.successtoResponseEntity(StatusCode.OK, email, ResponseMessage.SIGN_IN);
+    public ResponseEntity signIn(@RequestBody UserInfoDto userInfoDto, HttpServletResponse response){
+        String result = userService.signIn(userInfoDto, response);
+        return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SIGN_IN);
     }
 }

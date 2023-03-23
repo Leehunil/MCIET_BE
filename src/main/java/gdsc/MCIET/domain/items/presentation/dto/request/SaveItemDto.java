@@ -11,8 +11,6 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class SaveItemDto {
 
-
-    private String email;
     @NotNull
     private String name;
     @NotNull
@@ -20,8 +18,7 @@ public class SaveItemDto {
     @NotNull
     private ItemCategory itemCategory;
 
-    public SaveItemDto(String email, String name, LocalDate expirationDate, ItemCategory itemCategory){
-        this.email = email;
+    public SaveItemDto(String name, LocalDate expirationDate, ItemCategory itemCategory){
         this.name = name;
         this.expirationDate = expirationDate;
         this.itemCategory = itemCategory;

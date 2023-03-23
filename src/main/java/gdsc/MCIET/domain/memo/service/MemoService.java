@@ -6,6 +6,7 @@ import gdsc.MCIET.domain.memo.exception.MemoNotFound;
 import gdsc.MCIET.domain.memo.presentaion.dto.request.SaveMemoDto;
 import gdsc.MCIET.domain.memo.presentaion.dto.response.ShowMemoDto;
 import gdsc.MCIET.domain.user.domain.User;
+import gdsc.MCIET.global.utils.SecurityUtils;
 import gdsc.MCIET.global.utils.UserUtilsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,8 @@ public class MemoService implements MemoUtils{
     //메모 저장
     @Transactional
     public Long saveMemo(SaveMemoDto saveMemoDto){
-        User user = userUtils.findUser(saveMemoDto.getEmail());
+        String email = SecurityUtils.getCurrentUserId();
+        User user = userUtils.findUser(email);
         return memoRepository.save(Memo.builder()
                 .user(user)
                 .contents(saveMemoDto.getContents())
@@ -34,7 +36,8 @@ public class MemoService implements MemoUtils{
     }
 
     //저장된 메모 보여주기
-    public List<ShowMemoDto> showAllMemo(String email){
+    public List<ShowMemoDto> showAllMemo(){
+        String email = SecurityUtils.getCurrentUserId();
         User user = userUtils.findUser(email);
         List<Memo> memoList = memoRepository.findByUser(user);
         return memoList.stream()
@@ -44,6 +47,8 @@ public class MemoService implements MemoUtils{
 
     //메모 삭제
     public void deleteMemo(Long memoId){
+        String email = SecurityUtils.getCurrentUserId();
+        User user = userUtils.findUser(email);
         Memo memo = findMemo(memoId);
         memoRepository.delete(memo);
     }

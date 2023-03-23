@@ -34,9 +34,9 @@ public class ItemController {
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, itemId, ResponseMessage.SAVE_ITEM);
     }
 
-    @GetMapping("/{email}/list")
-    public ResponseEntity showItems(@PathVariable String email){
-        List<ShowItemDto> result = itemService.showItems(email);
+    @GetMapping("/list")
+    public ResponseEntity showItems(){
+        List<ShowItemDto> result = itemService.showItems();
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SHOW_ITEM_LIST);
     }
 

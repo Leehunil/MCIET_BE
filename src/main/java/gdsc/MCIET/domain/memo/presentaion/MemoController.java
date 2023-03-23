@@ -25,13 +25,13 @@ public class MemoController {
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, memoId, ResponseMessage.SAVE_MEMO);
     }
 
-    @GetMapping("/show/{email}")
-    public ResponseEntity showAllMemo(@PathVariable String email){
-        List<ShowMemoDto> result = memoService.showAllMemo(email);
+    @GetMapping("/list")
+    public ResponseEntity showAllMemo(){
+        List<ShowMemoDto> result = memoService.showAllMemo();
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SHOW_MEMO_LIST);
     }
 
-    @DeleteMapping ("/delete/{memoId}")
+    @DeleteMapping ("/{memoId}")
     public ResponseEntity updateCheckBox(@PathVariable Long memoId){
         memoService.deleteMemo(memoId);
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, null, ResponseMessage.DELETE_MEMO);

@@ -8,6 +8,7 @@ import gdsc.MCIET.domain.items.presentation.dto.response.RecommendItemDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDetailDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDto;
 import gdsc.MCIET.domain.user.domain.User;
+import gdsc.MCIET.global.utils.SecurityUtils;
 import gdsc.MCIET.global.utils.UserUtilsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,8 @@ public class ItemService implements ItemUtils {
 
     //아이템 저장하기
     public Long saveItem(String filePath, SaveItemDto saveItemDto){
-        User user = userUtils.findUser(saveItemDto.getEmail());
+        String email = SecurityUtils.getCurrentUserId();
+        User user = userUtils.findUser(email);
         return itemRepository.save(Item.builder()
                 .user(user)
                 .name(saveItemDto.getName())
@@ -39,7 +41,8 @@ public class ItemService implements ItemUtils {
     }
 
     //아이템 보여주기
-    public List<ShowItemDto> showItems(String email){
+    public List<ShowItemDto> showItems(){
+        String email = SecurityUtils.getCurrentUserId();
         User user = userUtils.findUser(email);
         List<Item> itemList = itemRepository.findByUser(user);
         for (Item item : itemList) {
@@ -51,8 +54,10 @@ public class ItemService implements ItemUtils {
     }
 
     //아이템 세부사항 보여주기
-    public ShowItemDetailDto showItemDetail(Long itemsId){
-        Item item = findItems(itemsId);
+    public ShowItemDetailDto showItemDetail(Long itemId){
+        String email = SecurityUtils.getCurrentUserId();
+        userUtils.findUser(email);
+        Item item = findItems(itemId);
         item.calculationExpirationDate(item.getExpirationDate());
         return new ShowItemDetailDto(item);
     }
@@ -64,6 +69,8 @@ public class ItemService implements ItemUtils {
 
     //아이템 삭제하기
     public void deleteItem(Long itemId){
+        String email = SecurityUtils.getCurrentUserId();
+        userUtils.findUser(email);
         Item item = findItems(itemId);
         itemRepository.delete(item);
     }
