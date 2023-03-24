@@ -4,12 +4,14 @@ spring:
     username: root
     password: hunil3751
   jpa:
-    show-sql: true
+    generate-ddl: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
+        show-sql: true
         format_sql: true
+
   main:
     allow-bean-definition-overriding: true
 google:
