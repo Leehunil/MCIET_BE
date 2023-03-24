@@ -41,9 +41,9 @@ public class InitDb {
             em.persist(user2);
             em.persist(user3);
 
-            Item item1 = new Item(user1, "item1", LocalDate.now(), "a", 1,ItemCategory.MEAT);
-            Item item2 = new Item(user1, "item2", LocalDate.now(), "b", 1,ItemCategory.BEVERAGE);
-            Item item3 = new Item(user1, "item3", LocalDate.now(), "c", 1,ItemCategory.FROZENFOOD);
+            Item item1 = new Item(user1, "item1", LocalDate.of(2023, 3, 25), "a", 1,ItemCategory.MEAT);
+            Item item2 = new Item(user1, "item2", LocalDate.of(2023, 3, 25), "b", 1,ItemCategory.BEVERAGE);
+            Item item3 = new Item(user1, "item3", LocalDate.of(2023, 3, 25), "c", 1,ItemCategory.FROZENFOOD);
             em.persist(item1);
             em.persist(item2);
             em.persist(item3);

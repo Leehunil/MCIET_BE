@@ -5,6 +5,7 @@ import gdsc.MCIET.domain.items.domain.repository.ItemRepository;
 import gdsc.MCIET.domain.items.exception.ItemNotFound;
 import gdsc.MCIET.domain.items.presentation.dto.request.SaveItemDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.RecommendItemDto;
+import gdsc.MCIET.domain.items.presentation.dto.response.Show1DayDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDetailDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDto;
 import gdsc.MCIET.domain.user.domain.User;
@@ -73,6 +74,15 @@ public class ItemService implements ItemUtils {
         userUtils.findUser(email);
         Item item = findItems(itemId);
         itemRepository.delete(item);
+    }
+
+    //유통기한 1일 남은 재료 보여주기
+    public List<Show1DayDto> ShowItems1Day(){
+        String email = SecurityUtils.getCurrentUserId();
+        User user = userUtils.findUser(email);
+        LocalDate compareDate = LocalDate.now().plusDays(1);
+        List<Item> items = itemRepository.findByRemainDate(user, compareDate);
+        return items.stream().map(item -> new Show1DayDto(item)).collect(Collectors.toList());
     }
 
     //요리 추천 페이지 이름 보내주기

@@ -3,6 +3,7 @@ package gdsc.MCIET.domain.items.presentation;
 import gdsc.MCIET.domain.items.domain.Item;
 import gdsc.MCIET.domain.items.presentation.dto.request.SaveItemDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.RecommendItemDto;
+import gdsc.MCIET.domain.items.presentation.dto.response.Show1DayDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDetailDto;
 import gdsc.MCIET.domain.items.presentation.dto.response.ShowItemDto;
 import gdsc.MCIET.domain.items.service.ItemService;
@@ -54,9 +55,17 @@ public class ItemController {
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, null, ResponseMessage.DELETE_ITEM);
     }
 
+    @GetMapping("/1day/list")
+    public ResponseEntity item1dayRemain(){
+        List<Show1DayDto> result = itemService.ShowItems1Day();
+        return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SHOW_ITEM_1DAY_LIST);
+    }
+
     @GetMapping("/{email}/recommend-list")
     public ResponseEntity showRecommendItems(@PathVariable String email){
         List<RecommendItemDto> result = itemService.sendItemName(email);
         return SuccessResponse.successtoResponseEntity(StatusCode.OK, result, ResponseMessage.SHOW_ITEM_NAME);
     }
+
+
 }

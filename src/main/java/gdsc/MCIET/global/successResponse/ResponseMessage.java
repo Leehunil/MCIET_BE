@@ -8,6 +8,7 @@ public class ResponseMessage {
     public static final String SHOW_ITEM_DETAIL = "아이템 세부사항 조회 완료";
     public static final String SHOW_ITEM_NAME = "요리 추천용 재료 조회 완료";
     public static final String DELETE_ITEM = "아이템 삭제 완료";
+    public static final String SHOW_ITEM_1DAY_LIST ="유통기한 1일 남은 재료 조회 완료";
 
     //CUISINE
     public static final String SAVE_OPEN_API = "공공데이터 저장 완료";
