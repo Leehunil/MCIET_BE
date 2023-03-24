@@ -7,10 +7,8 @@ import lombok.Getter;
 public class Show1DayDto {
 
     private String name;
-    private String filePath;
 
     public Show1DayDto(Item item){
         this.name = item.getName();
-        this.filePath = item.getFilePath();
     }
 }
