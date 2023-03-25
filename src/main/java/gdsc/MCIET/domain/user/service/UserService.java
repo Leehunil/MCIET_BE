@@ -2,20 +2,18 @@ package gdsc.MCIET.domain.user.service;
 
 import gdsc.MCIET.domain.refreshtoken.domain.RefreshToken;
 import gdsc.MCIET.domain.refreshtoken.domain.repository.RefreshTokenRepository;
-import gdsc.MCIET.domain.user.domain.Role;
 import gdsc.MCIET.domain.user.domain.User;
 import gdsc.MCIET.domain.user.domain.repository.UserRepository;
-import gdsc.MCIET.domain.user.presentation.dto.UserInfoDto;
+import gdsc.MCIET.domain.user.presentation.dto.request.UserInfoDto;
+import gdsc.MCIET.domain.user.presentation.dto.response.ShowUserInfoDto;
 import gdsc.MCIET.global.security.JwtTokenProvider;
+import gdsc.MCIET.global.utils.SecurityUtils;
 import gdsc.MCIET.global.utils.UserUtilsImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -28,18 +26,6 @@ public class UserService {
     private final RefreshTokenRepository refreshTokenRepository;
 
     private final UserUtilsImpl userUtils;
-
-//    public String signIn(UserInfoDto userInfoDto, HttpServletResponse response){
-//
-//        if(userRepository.findByEmail(userInfoDto.getEmail()).isEmpty()) {
-//            User user = userRepository.save(User.builder()
-//                    .name(userInfoDto.getName())
-//                    .email(userInfoDto.getEmail())
-//                    .build());
-//        }
-//        extracted(userInfoDto.getEmail(), response);
-//        return userInfoDto.getEmail();
-//    }
 
     public String signIn(UserInfoDto userInfoDto, HttpServletResponse response){
         if(userRepository.findByEmail(userInfoDto.getEmail()).isEmpty()) {
@@ -55,6 +41,12 @@ public class UserService {
             extracted(user.getEmail(), response);
             return user.getEmail();
         }
+    }
+
+    public ShowUserInfoDto showUserInfo(){
+        String email = SecurityUtils.getCurrentUserId();
+        User user = userUtils.findUser(email);
+        return new ShowUserInfoDto(user);
     }
 
 

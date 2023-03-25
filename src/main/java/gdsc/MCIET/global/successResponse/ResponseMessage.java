@@ -24,5 +24,6 @@ public class ResponseMessage {
 
     //USER
     public static final String SIGN_IN = "로그인 성공";
+    public static final String SHOW_USER_INFO = "유저 정보 조회 완료";
 
 }
