@@ -29,7 +29,7 @@ We don't always wonder how long the groceries have left their shelf life or how 
 
 ---
 
-<img alt="image" src="src/ciety.png">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/178ba290-c9d6-4c84-b792-7718ee5fc649">
 
 This bear name is Ciety! Hi Ciety!
 
