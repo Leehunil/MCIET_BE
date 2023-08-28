@@ -14,7 +14,6 @@
 - [The United Nations 17 Sustainable Development Goals](#The-United-Nations-17-Sustainable-Development-Goals)
 - [Technology Stack](#Technology-Stack)
 - [Key Features](#Key-Features)
-- [API Statement](#API-Statement)
 - [Contributor](#Contributor)
 
 ---
@@ -39,19 +38,19 @@ This bear name is Ciety! Hi Ciety!
 
 ---
 
-<img alt="image" src="src/un17.png">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/93163901-c776-49e9-85c8-94ef2ee62118">
 
 The UN has 17 main objectives, including human universal, global environment, economic and social issues.
 
 ### Goals That We Will Achieve
 
-<img alt="image" src="src/un3.png">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/49104be8-587c-49f8-9598-a04f5d238411">
 
 #### **Goal 3: Good Health And Well-Being**
 
 Our Android app has been developed to check the expiration date in real time, so you can keep your groceries fresh.
 
-<img alt="image" src="src/un12.png">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/43ed1bf5-02b0-4e24-80f2-fd199c8b44a3">
 
 #### **Goal 12: Responsible Consumption And Production**
 
@@ -110,10 +109,16 @@ Our Android app was developed with the aim of minimizing discarded groceries, so
 
 ---
 
-<img alt="image" src="src/post2.jpg">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/2c21a3d8-f15c-4d6e-80c7-61333de4bb71">
 
-<img alt="image" src="src/post3.jpg">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/395cf6b8-d2cb-4b47-8bee-e9b2456a1636">
 
-<img alt="image" src="src/post4.jpg">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/4116ad13-cca9-46db-8cb1-b014f20aa39e">
 
 ---
+
+## Contributor
+
+---
+
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/2f5d1969-eb69-4bdb-a2d8-8b95c518f929">
