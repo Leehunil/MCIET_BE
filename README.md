@@ -3,7 +3,7 @@
 자신의 냉장고 식품을 저장하고 유통기한을 확인하세요!!
 # MCIET, Mom can I eat this?
 
-<img alt="image" src="src/post1.jpg">
+<img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/ad13620e-3f45-4b98-81dc-21379ee3a5a3">
 
 2023-MCIET-SolutionChallenge-Android
 
