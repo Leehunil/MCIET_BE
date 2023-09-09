@@ -119,3 +119,11 @@ Our Android app was developed with the aim of minimizing discarded groceries, so
 ---
 
 <img alt="image" src="https://github.com/Leehunil/MCIET_BE/assets/104710245/2f5d1969-eb69-4bdb-a2d8-8b95c518f929">
+
+---
+
+## Video
+
+---
+
+[Final Presentation Video] (https://www.youtube.com/watch?v=p5NbRYLou70)
